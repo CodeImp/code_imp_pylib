@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 def decodeStdoutValue(strValue):
-    dict = {}
+    result = {}
 
     lines = strValue.split("\n")
     for line in lines:
@@ -9,8 +9,8 @@ def decodeStdoutValue(strValue):
             continue
         try:
             [name, value] = line.split("=")
-            dict[name] = value
+            result[name] = value
         except:
             print "Failed to parse [", line, "]"
 
-    return dict;
+    return result;
